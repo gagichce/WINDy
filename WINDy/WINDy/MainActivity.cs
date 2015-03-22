@@ -1,15 +1,17 @@
 ﻿using System;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Telephony;
+using System.Collections.Generic;
 
 namespace WINDy
 {
-    [Activity(Label = "WINDy", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "WINDy", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/MyCustomTheme")]
     public class MainActivity : Activity
     {
         int count = 1;
@@ -37,6 +39,23 @@ namespace WINDy
         private void GetNumSMS()
         {
             viewer.Text = "Testing!";
+
+            Android.Net.Uri uri = Android.Net.Uri.Parse("content://sms/inbox");
+
+            var cursor = ManagedQuery(uri, null, null, null, null);
+
+            var dateTimes = new List<DateTime>();
+
+            var maybeDates = new List<string>();
+
+            if (cursor.MoveToFirst())
+            {
+                for (int i = 0; i < cursor.Count; i++)
+                {
+                    maybeDates.Add(cursor.GetString(cursor.GetColumnIndexOrThrow("date")));
+                    cursor.MoveToNext();
+                }
+            }
         }
     }
 }

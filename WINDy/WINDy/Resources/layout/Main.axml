@@ -6,9 +6,12 @@
     <Button
         p1:text="Get my WINDy!"
         p1:layout_width="match_parent"
-        p1:layout_height="61.0dp"
+        p1:layout_height="62.4dp"
         p1:id="@+id/MyButton"
-        p1:layout_marginTop="2.0dp" />
+        p1:layout_marginTop="89.9dp"
+        p1:background="#f1a364"
+        p1:layout_marginBottom="40.3dp"
+        p1:layout_alignParentEnd="true" />
     <TextView
         p1:layout_width="wrap_content"
         p1:layout_height="wrap_content"

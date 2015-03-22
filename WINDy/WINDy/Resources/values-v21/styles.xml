@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!-- Inherit from the light Material Theme -->
+  <style name="MyCustomTheme" parent="android:Theme.Material.Light">
+    <item name="android:colorPrimary">@color/my_orange</item>
+    <item name="android:textColorPrimary">@color/my_white</item>
+    <!-- Override the color of UI controls -->
+    <item name="android:colorAccent">@color/my_dark_orange</item>
+
+    <item name="android:navigationBarColor">@color/my_gray</item>
+    <item name="android:statusBarColor">@color/my_dark_orange</item>
+
+  </style>
+</resources>
